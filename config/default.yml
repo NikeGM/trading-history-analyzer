@@ -1,0 +1,34 @@
+db:
+  host: '127.0.0.1'
+  user: 'exchange_user'
+  password: 'exchange_pass'
+  database: 'exchange_db'
+  port: 5432
+
+parametrs:
+  capital: [15000]
+  lotSize: [10]
+  maxLossPercentage: [0.75, 0.50]
+  maxLossCount: [8, 12, 16]
+  from: ['2013-01-23 17:00:00']
+  to: ['2019-01-23 17:00:00']
+  period: ['m30', 'h1']
+  correction: [1, 10, 15]
+  name: ['gazp']
+  margin: [2]
+  buyField: ['midOHLC']
+  sellField: ['midOHLC']
+  interval: [20000000]
+  reverse: [true, false]
+  IName: ['ma', 'ema']
+  IAverageParam: [2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+  IField: ['high', 'open', 'low', 'close', 'midOC', 'midHL', 'midOHLC']
+
+output:
+  batchSize: 6000
+
+input:
+  batchSize: 1000
+
+cache:
+  storage: 'localStorage'
